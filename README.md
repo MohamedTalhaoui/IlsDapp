@@ -1,8 +1,6 @@
 # Insurance Linked Securities (ILS) DApp
-What are ILS
-
-Cat Bonds
-Resilience Bonds
+This project is a prototype demonstrating the use of blockchain technology to implement ILS.
+Thi prototype is developped on Ethereum blockchain and focus on Cat bonds.
 
 ## What is a CAT Bond
 From investopedia:
@@ -21,44 +19,27 @@ Read more: Catastrophe Bond (CAT) <http://www.investopedia.com/terms/c/catastrop
 * If the catastrophe occurs before the bond maturity, then the bond holder loose the principal and cease to receive coupon payments
 * If the catastrophe does not occur before the bond maturity, then the bond holder receives the principal back.
 
-Catastrophe trigger
+When a catastrophe occurs
 A lot of particpants
 
-- Prototype: Nobody will be sold on an idea alone that anybody could have in a minute. You need something here. Maybe 1-2 slides describing the business processes (see below) with a proof that you can use Ethereum (some code that looks related to your stuff)
-
-Business processes, at least have a hypothesis for:
-- as a bondholder how do I get paid? In ETH? If so where is this ETH coming from?
-- and as the (re-)insurer how do I pay bond holders?
-- as the insurer how do I pay insurance takers? I assume they get fiat money not ETH...
-- as the insurer, related to the above, what does this this mean for portfolio management (can I make returns on ETH or do I immediately convert to real money after the ICO and invest the fiat money) and related to that: regulatory capital requirements (depending on how you model it, how does the volatility of ETH come into play..)
-
-Finally, this is more for Mohamed, in terms of blockchain technology, is there anything that you actually have to build specifically once you both have understood the business processes or is this all existing stuff that is already very well understood, just applied in a certain context.
 
 
 ## Blockchain to the rescue
 The revisited process will look like:
 
-* Insurance taker pays a premium in fiat currency to an insurance company
-* The insurance company issue tokens equivalent to premium payments
+* Insurance taker pays a premium in ETH to an insurance company
 * The insurance company issue a bond in the form of a smart contract
 * The investors acquires the smart bonds paying the principal in ETH
 * The insurance company collects the principals to constitute the risk pool
-* The insurance company uses the tokenized preminums to pay coupons to bond holders
+* The insurance company uses the preminums to pay coupons to bond holders
 * If the catastrophe occurs before the bond maturity, then the bond holder loose the principal and cease to receive coupon payments
 * If the catastrophe does not occur before the bond maturity, then the bond holder receives the principal back.
 
-
-The blockchain will provide security, transparency and automation at lower costs.
-
-### Security
-### Transparency
-### Automation
+The whole process is completly hold on-chain, so the blockchain provides security, transparency and automation at lower costs.
+Also clearance and settlement are built-in when using the blockchain.
 
 
-### References
-
-
-## Installation
+## Install the project
 
 1. Install truffle:
 ```
@@ -114,8 +95,3 @@ truffle serve
 
 which opens an HTTP Server on http://localhost:8080
 
-## Next steps
-
-
-## Contact
-If you run into any problems, don't hesitate to contact us on the course-forum at any time. If you use the forum-search function, there is a high chance that you find the answer to your problem already.
