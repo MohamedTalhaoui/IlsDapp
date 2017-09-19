@@ -1,0 +1,34 @@
+<div ng-hide="success || errors.length > 0" class="row">
+    <div class="col-lg-6">
+        <h1>New bonds</h1>
+        <div ng-repeat="bond in bonds">
+            <h1>{{bond}}</h1>
+            <button class="btn btn-default" ng-click="checkTriggerCondition(bond.bondId)">Check</button>
+            <h3>Wind speed in {{}} is: <span class="black"><span id="wind-speed">{{windSpeed}}</span></span></h3>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <h1>Subscribe</h1>
+        <form ng-submit="subscribeBond(bond_id, quantity)">
+            <div class="form-group">
+                <label for="bondId">Bond Id</label>
+                <select class="form-control" ng-model="bond_id" id="bondId">
+                    <option ng-repeat="bond in bonds">{{bond}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input class="form-control" type="number" class="form-control" id="quantity" placeholder="1" ng-model="quantity">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+<div ng-show="success">
+    <div class="alert alert-success" role="alert">Success</div>
+</div>
+<div ng-show="errors">
+    <div class="alert alert-error" role="alert">{{errors}}</div>
+</div>

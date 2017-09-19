@@ -1,0 +1,25 @@
+{
+  "name": "ils-marketplace",
+  "version": "1.0.0",
+  "description": "ils-marketplace",
+  "main": "/",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "ethereum",
+    "wallet",
+    "course",
+    "solidity",
+    "truffle"
+  ],
+  "author": "Mohamed Talhaoui",
+  "license": "MIT",
+  "devDependencies": {
+    "truffle-default-builder": "^2.0.0"
+  }
+}
