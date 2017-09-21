@@ -10,6 +10,8 @@ From investopedia:
 Read more: Catastrophe Bond (CAT) <http://www.investopedia.com/terms/c/catastrophebond.asp#ixzz4t2pXHOIm>
 
 ## ILS current business process
+The simplifified process look like:
+![ILS current process](https://github.com/MohamedTalhaoui/IlsDapp/images/Problem.png)
 
 * Insurance taker pays a premium to an Insurance company to cover from a natural disaster like hurricane or earthquake
 * The Insurance company contact with a Re-Insurance compay
@@ -19,13 +21,14 @@ Read more: Catastrophe Bond (CAT) <http://www.investopedia.com/terms/c/catastrop
 * If the catastrophe occurs before the bond maturity, then the bond holder loose the principal and cease to receive coupon payments
 * If the catastrophe does not occur before the bond maturity, then the bond holder receives the principal back.
 
-When a catastrophe occurs
-A lot of particpants
+To keep it simple, bond clearance and settlements is not described, but it is also an important part adding complexity to the process
+Read more: Bond clearance and settlement <...>
 
 
 
 ## Blockchain to the rescue
 The revisited process will look like:
+![ILS revisited process](https://github.com/MohamedTalhaoui/IlsDapp/images/Solution.png)
 
 * Insurance taker pays a premium in ETH to an insurance company
 * The insurance company issue a bond in the form of a smart contract
@@ -41,17 +44,17 @@ Also clearance and settlement are built-in when using the blockchain.
 
 ## Install the project
 
-1. Install truffle:
+Install truffle:
 ```
 npm install -g truffle
 ```
 
-2. **clone this repository**
+clone this repository
 ```
-git clone https://github.com/tomw1808/truffle_eth_class1.git
+git clone https://github.com/MohamedTalhaoui/IlsDapp
 ```
 
-3. Install testrpc:
+Install testrpc:
 ```
 npm install -g testrpc
 ```
