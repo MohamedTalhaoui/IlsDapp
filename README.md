@@ -12,7 +12,7 @@ Read more: Catastrophe Bond (CAT) <http://www.investopedia.com/terms/c/catastrop
 ## ILS current business process
 The simplifified process look like:
 
-![ILS current process](https://github.com/MohamedTalhaoui/IlsDapp/tree/master/images/Problem.png)
+![ILS current process](images/Problem.png)
 
 * Insurance taker pays a premium to an Insurance company to cover from a natural disaster like hurricane or earthquake
 * The Insurance company contact with a Re-Insurance compay
@@ -30,7 +30,7 @@ Read more: Bond clearance and settlement <...>
 ## Blockchain to the rescue
 The revisited process will look like:
 
-![ILS revisited process](https://github.com/MohamedTalhaoui/IlsDapp/tree/master/images/Solution.png)
+![ILS revisited process](images/Solution.png)
 
 * Insurance taker pays a premium in ETH to an insurance company
 * The insurance company issue a bond in the form of a smart contract
