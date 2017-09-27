@@ -15,10 +15,10 @@ app.factory('Accounts', function(){
 
 app.factory('Cities', function(){
   var cities = [
-      {key: 347936, name: 'Miami'},
-      {key: 313082, name: 'Geneva'},
-      {key: 328328, name: 'London'},
-      {key: 349727, name: 'New York'}
+      {key: 4164138, name: 'Miami'},
+      {key: 6458783, name: 'Geneva'},
+      {key: 2643741, name: 'London'},
+      {key: 5128638, name: 'New York'}
   ];
   return {
     list: function() { return cities; }

@@ -40,13 +40,17 @@ contract IlsContract is usingOraclize {
   }
   mapping(address => Portfolio) private portolios;
 
-  mapping(bytes32 => uint) private checks;
+  // Oraclize query id -> bond id
+  mapping(bytes32 => uint) private queries;
+
+  mapping(uint => string) private conditions;
 
 
   event BondIssued(uint bondId);
   event MaturityReached(uint bondId);
   event CatastropheOccured(uint windSpeed);
   event newOraclizeQuery(string description);
+  event WeatherCheckReceived(uint bondId, uint cityKey, string windSpeed);
 
   function IlsContract() {
     owner = msg.sender;
@@ -58,23 +62,29 @@ contract IlsContract is usingOraclize {
       var windSpeed = parseInt(strWindSpeed);
       if(windSpeed > 100) {
         CatastropheOccured(windSpeed);        
-      } else {
-        checkTriggerCondition(checks[queryId]);
       }
+      var bond = bonds[queries[queryId]];
+      conditions[bond.cityKey] = strWindSpeed;
+      WeatherCheckReceived(bond.id, bond.cityKey, strWindSpeed);
   }
 
-  function checkTriggerCondition(uint _bondId) payable {
+  function getConditionForBond(uint _bondId) constant returns (string){
+    return conditions[bonds[_bondId].cityKey];
+  }
+
+  function checkWeatherCondition(uint _bondId) payable {
       if (oraclize_getPrice("URL") > this.balance) {
           newOraclizeQuery("Oraclize query was NOT sent, please add some ETH to cover for the query fee");
       } else {
-          newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
+          newOraclizeQuery("Oraclize query was sent, standing by for the answer...");
           var bond = bonds[_bondId];
           var queryId = oraclize_query("URL", strConcat(
-            "json(http://dataservice.accuweather.com//currentconditions/v1/", 
+            "json(http://api.openweathermap.org/data/2.5/weather?id=", 
             uint2str(bond.cityKey), 
-            "?apikey=PiXAx3gAdDyWqnGA46tYKBbComtv1TL2&details=true)[0].Wind.Speed.Metric.Value")
+            "&APPID=ecfbdb6fcf21df82d26c2a94b0ad3556).wind.speed")
           );
-          checks[queryId] = _bondId;
+          
+          queries[queryId] = _bondId;
       }
   }
 
