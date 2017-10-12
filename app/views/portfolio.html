@@ -5,10 +5,10 @@
     <thead>
       <tr>
         <th>Bond ID</th>
-        <th>Issuer</th>
-        <th>Remaining</th>
-        <th></th>
-        <th>Wind Speed</th>
+        <th>Owner</th>
+        <th>Quantity</th>
+        <th>Quantity for Sale</th>
+        <th>Sell Price</th>
         <th>Quantity</th>
         <th></th>
       </tr>
@@ -16,12 +16,11 @@
     <tbody>
       <tr ng-repeat="bond in bonds">
         <td>{{bond.bondId}}</td>
-        <td>{{bond.issuer}}</td>
+        <td>{{bond.investor}}</td>
         <td>{{bond.quantity}}</td>
-        <td><button class="btn btn-default" ng-click="checkWeatherCondition(bond.bondId)">Check</button></td>
-        <td><span class="black"><span id="wind-speed">{{conditions[bond.bondId]}}</span></span></td>
-        <td><input type="number" class="form-control" id="quantity" placeholder="1" ng-model="quantity"></td>
-        <td><button ng-click="subscribeBond(bond.bondId, quantity)" class="btn btn-default">Subscribe</button></td>
+        <td><input type="number" class="form-control" id="quantity_for_sell" placeholder="1" ng-model="quantity_for_sale"></td>
+        <td><input type="number" class="form-control" id="sell_price" placeholder="1" ng-model="sell_price"></td>
+        <td><button ng-click="offerForSale(bond.bondId, quantity_for_sale, sell_price)" class="btn btn-default">Subscribe</button></td>
       </tr>
     </tbody>
   </table>

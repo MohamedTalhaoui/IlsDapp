@@ -9,7 +9,9 @@ module.exports = {
       "javascript/app.js",
       "javascript/controllers/main.js",
       "javascript/controllers/bonds.js",
-      "javascript/controllers/issuers.js"
+      "javascript/controllers/issuers.js",
+      "javascript/controllers/portfolio.js",
+      "javascript/controllers/marketplace.js"
     ],
     "app.css": [
       "stylesheets/app.css"

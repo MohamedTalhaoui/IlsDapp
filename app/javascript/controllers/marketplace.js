@@ -1,6 +1,6 @@
 var app = angular.module('IlsDapp');
 
-app.controller('BondsController', function($scope){
+app.controller('MarketplaceController', function($scope){
 
   $scope.bonds = [];
   $scope.conditions = [];
@@ -12,23 +12,6 @@ app.controller('BondsController', function($scope){
     });    
   });
 
-  IlsContract.deployed().then(function(contract) {
-    contract.BondSubscribed(null, {fromBlock: 0, toBlock: 'latest'}, function(error, result) {
-      console.log(error);
-      var bond = result.args;
-      console.log(result);
-      $scope.bonds[bond.bondId].quantity=bond.remainingQuantity;
-      $scope.$apply();
-    });    
-  });
-
-  IlsContract.deployed().then(function(contract) {
-    contract.WeatherCheckReceived().watch(function(error, result) {
-      console.log(result.args);
-      $scope.conditions[result.args.bondId] = result.args.windSpeed;
-      $scope.$apply();
-    });    
-  });
 
   $scope.checkWeatherCondition = function(strBondId) {
     var bondId = parseInt(strBondId, 10);
@@ -45,9 +28,9 @@ app.controller('BondsController', function($scope){
     });
   }
 
-  $scope.subscribeBond = function(bondId, quantity) {
+  $scope.buyBond = function(bondId, quantity) {
     IlsContract.deployed().then(function(contract) {
-      var tx = {gas:500000, value: web3.toWei('1', 'ether')};
+      var tx = {gas:500000};
       tx.from = $scope.account;
       return contract.subscribe(bondId, quantity, tx);
     }).then(function (bondId) {

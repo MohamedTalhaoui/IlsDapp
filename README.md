@@ -78,21 +78,34 @@ npm install
 which installs the node components.
 
 
-## Run the Project
+## Run the Project locally
 
-then
+Start testrpc
+
+```
+testrpc -m "secret" --accounts 50
+```
+
+Setup etherum-bridge
+
+```
+git clone https://github.com/oraclize/ethereum-bridge
+cd ethereum-bridge
+node bridge -a 49
+```
+ref:
+http://ethereum.stackexchange.com/questions/11383/oracle-oraclize-it-with-truffle-and-testrpc
+
+Add a custom address resolver
+Add OAR = OraclizeAddrResolverI(EnterYourOarCustomAddress);
+
+Migrate the contract
 
 ```
 truffle migrate
 ```
 
 and
-
-```
-truffle build
-```
-
-or
 
 ```
 truffle serve

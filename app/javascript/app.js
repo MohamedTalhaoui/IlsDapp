@@ -35,5 +35,11 @@ app.config(function($routeProvider) {
   }).when('/bonds', {
     templateUrl: 'views/bonds.html',
     controller: 'BondsController'
+  }).when('/portfolio', {
+    templateUrl: 'views/portfolio.html',
+    controller: 'PortfolioController'
+  }).when('/marketplace', {
+    templateUrl: 'views/marketplace.html',
+    controller: 'MarketplaceController'
   }).otherwise('/', {redirectTo: '/'});
 });
